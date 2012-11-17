@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>export PATH=$PATH:/Applications/AdobeAir/bin
+export CLASSPATH=/Applications/AdobeAir/lib/adt.jar
+adl "$TM_PROJECT_DIRECTORY/application.xml"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@</string>
+	<key>name</key>
+	<string>Package Preview</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>uuid</key>
+	<string>7CE80D53-38A8-45C0-A993-FA11CF272883</string>
+</dict>
+</plist>
