@@ -23,7 +23,7 @@ IP_DICT=
 while [ 1 ]
 do
 	echo "Last updated on `date`.."
-	netstat -an | grep -v unix | grep ESTABLISHED | tr -s ' ' | cut -d' ' -f4 | grep :*\.$PORT$ | sed "s/:*\.[0-9]*$//g" | sort | uniq -c | sed 0d |\
+	netstat -an | grep -v unix | grep ESTABLISHED | tr -s ' ' | cut -d' ' -f5 | grep :*\.$PORT$ | sed "s/:*\.[0-9]*$//g" | sort | uniq -c | sed 0d |\
 	while read ip
 	do
 		COUNT=$(echo $ip | awk '{print $1}')
@@ -31,10 +31,10 @@ do
 		RDNS=
 		if [ $DO_RDNS -eq 1 ]
 		then
-			RDNS=$(dig +noall +answer -x $IP);
-			echo "$IP###$COUNT###$RDNS";
+			RDNS=$(dig +noall +answer +short -x $IP);
+			echo "$COUNT-------------$IP-------------$RDNS";
 		else
-			echo "$IP###$COUNT";
+			echo "$COUNT-------------$IP";
 		fi
 	done
 
